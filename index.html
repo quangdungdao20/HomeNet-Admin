@@ -1649,7 +1649,7 @@
         let activeTab = "devices";
         
         // Cache settings in memory & localStorage
-        let apiServerUrl = localStorage.getItem("apiServerUrl") || "https://calm-brown-appreciated-coal.trycloudflare.com";
+        let apiServerUrl = localStorage.getItem("apiServerUrl") || "https://hypnotism-salad-rematch.ngrok-free.dev";
         let authMode = "credentials";
 
         // Authentication state
@@ -1763,6 +1763,7 @@
             if (token) {
                 options.headers["Authorization"] = `Bearer ${token}`;
             }
+            options.headers["ngrok-skip-browser-warning"] = "69420";
             
             const url = getApiUrl(endpoint);
             const response = await fetch(url, options);
@@ -1821,7 +1822,10 @@
             try {
                 const response = await fetch(getApiUrl("auth/login"), {
                     method: "POST",
-                    headers: { "Content-Type": "application/json" },
+                    headers: { 
+                        "Content-Type": "application/json",
+                        "ngrok-skip-browser-warning": "69420"
+                    },
                     body: JSON.stringify({ username: usernameInput, password: passwordInput })
                 });
                 
@@ -1855,7 +1859,10 @@
             try {
                 const response = await fetch(getApiUrl("auth/register"), {
                     method: "POST",
-                    headers: { "Content-Type": "application/json" },
+                    headers: { 
+                        "Content-Type": "application/json",
+                        "ngrok-skip-browser-warning": "69420"
+                    },
                     body: JSON.stringify({ username: usernameInput, password: passwordInput })
                 });
                 
@@ -1877,7 +1884,10 @@
             try {
                 await fetch(getApiUrl("auth/logout"), {
                     method: "POST",
-                    headers: { "Authorization": `Bearer ${token}` }
+                    headers: { 
+                        "Authorization": `Bearer ${token}`,
+                        "ngrok-skip-browser-warning": "69420"
+                    }
                 });
             } catch (err) {
                 console.error("Logout failed", err);
