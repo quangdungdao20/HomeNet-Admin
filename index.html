@@ -1782,6 +1782,7 @@
                 options.headers["Authorization"] = `Bearer ${token}`;
             }
             options.headers["ngrok-skip-browser-warning"] = "69420";
+            options.credentials = "include";
             
             const url = getApiUrl(endpoint);
             const response = await fetch(url, options);
@@ -1860,6 +1861,7 @@
             try {
                 const response = await fetch(getApiUrl("auth/login"), {
                     method: "POST",
+                    credentials: "include",
                     headers: { 
                         "Content-Type": "application/json",
                         "ngrok-skip-browser-warning": "69420"
@@ -1919,6 +1921,7 @@
             try {
                 const response = await fetch(getApiUrl("auth/register"), {
                     method: "POST",
+                    credentials: "include",
                     headers: { 
                         "Content-Type": "application/json",
                         "ngrok-skip-browser-warning": "69420"
@@ -1953,6 +1956,7 @@
             try {
                 await fetch(getApiUrl("auth/logout"), {
                     method: "POST",
+                    credentials: "include",
                     headers: { 
                         "Authorization": `Bearer ${token}`,
                         "ngrok-skip-browser-warning": "69420"
